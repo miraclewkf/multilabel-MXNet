@@ -11,20 +11,31 @@ If you are doing a single label image classification, your .lst file may like th
 5247	0.000000	image1.jpg
 
 33986	1.000000	image2.jpg
+
 39829	2.000000	image3.jpg
+
 15647	3.000000	image4.jpg
+
 10369	1.000000	image5.jpg
+
 22408	3.000000	image6.jpg
+
 2598	2.000000	image7.jpg
 
 For multilabel image classification, you should create .lst file as this(take 8 classes as example):
 
 5247	1.000000	0.000000	0.000000	0.000000	1.000000	0.000000	0.000000	0.000000	image1.jpg
+
 33986	1.000000	1.000000	0.000000	0.000000	0.000000	0.000000	0.000000	0.000000	image2.jpg
+
 39829	1.000000	0.000000	0.000000	0.000000	0.000000	0.000000	0.000000	0.000000	image3.jpg
+
 15647	1.000000	0.000000	0.000000	1.000000	0.000000	0.000000	0.000000	0.000000	image4.jpg
+
 10369	0.000000	0.000000	1.000000	0.000000	0.000000	0.000000	1.000000	1.000000	image5.jpg
+
 22408	1.000000	0.000000	0.000000	0.000000	0.000000	0.000000	0.000000	0.000000	image6.jpg
+
 2598	0.000000	1.000000	1.000000	0.000000	1.000000	1.000000	0.000000	0.000000	image7.jpg
 
 in this implement, we only use .lst and raw image as the input instead of .rec file.
@@ -33,8 +44,9 @@ in this implement, we only use .lst and raw image as the input instead of .rec f
 
 3. class_train_multilabel.sh is the train script for you to start fine-tune quickly. You should open this script and change the path of fine-tune-multilabel.py, .lst file, imagefile and model-prefix after you clone the project.
 
-Then run: 
-sh class_train_multilabel.sh
+   Then run: 
+   sh class_train_multilabel.sh
+
 
 More details:
 
