@@ -45,8 +45,7 @@ in this implement, we only use .lst and raw image as the input instead of .rec f
    Then run: 
    sh class_train_multilabel.sh
 
-##########################################################################################################
-More details:
+#################################### More details ##############################################
 
 1. fine-tune-multilabel.py is modified from fine-tune.py which you can find from https://github.com/dmlc/mxnet/blob/master/example/image-classification/fine-tune.py. There are something different:
 
