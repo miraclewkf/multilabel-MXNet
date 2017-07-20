@@ -3,8 +3,7 @@ This is the implement of the multilabel image classificaton in MXNet. Multilabel
 
 This implement doesn't need recompile MXNet and is very convenient for you to use. Firstly, I assume that you can use MXNet normally. Then, do as follows:
 
-1. Prepare your data
-If you are doing a single label image classification, your .lst file may like this(take 4 classes as example):
+1. If you are doing a single label image classification, your .lst file may like this(take 4 classes as example):
 
 5247	0.000000	image1.jpg
 
