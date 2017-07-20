@@ -9,6 +9,7 @@ Do as follows:
 If you are doing a single label image classification, your .lst file may like this(take 4 classes as example):
 
 5247	0.000000	image1.jpg
+
 33986	1.000000	image2.jpg
 39829	2.000000	image3.jpg
 15647	3.000000	image4.jpg
