@@ -52,7 +52,7 @@ in this implement, we only use .lst and raw image as the input instead of .rec f
 
 1.1. I add two classes CrossEntropyLoss and class CrossEntropyProb, these two classes can be found from https://github.com/dmlc/mxnet/blob/master/example/recommenders/crossentropy.py. There is a bug in crossentropy.py: grad = -1. / (p - self.eps_1 + y). The (p - self.eps_1 + y) part will be 0 in some cases, so I use d_new = p - self.eps_1 + y, d_new[d_new==0] = self.eps_1,   grad = -1. / d_new instead.
 
-1.2. In the get_fine_tune_model function, I use net = mx.symbol.sigmoid(data=net, name='sig') and net = mx.symbol.Custom(data=net,name='softmax', op_type='CrossEntropyLoss') instead of mx.symbol.softmaxOutput to deal with multilabel problem.
+1.2. In the get_fine_tune_model function, I use net = mx.symbol.sigmoid(data=net, name='sig') and net = mx.symbol.Custom(data=net,name='softmax', op_type='CrossEntropyLoss') instead of mx.symbol.softmaxOutput to deal with multilabel problem. sigmoid layer take the output of full connection as input ahd translate it into 0~1, which means the probability. CrossEntropy layer take the probability 0~1 as input and calculate the loss.
 
 2. fit_multilabel.py is modified from fit.py which you can find from https://github.com/dmlc/mxnet/blob/master/example/image-classification/common/fit.py. There are something different:
 
