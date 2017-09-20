@@ -5,8 +5,9 @@ This implement doesn't need recompile MXNet and is very convenient for you to us
 
  1. If you are doing a single label image classification, your .lst file may like this(take 4 classes as example):
 
+|ID	|label   |      image_name|
+|:------|:-------|:---------------| 
 |5247	|0.000000|	image1.jpg|
-
 |33986	|1.000000|	image2.jpg|
 
 |39829	|2.000000|	image3.jpg|
