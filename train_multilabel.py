@@ -41,7 +41,7 @@ def train_model(model, gpus, epoch=0, num_epoch=20, kv='device', num_class=6):
         path_root           = args.image_train,
         part_index          = kv.rank,
         num_parts           = kv.num_workers,
-        shuffle             = False,        
+        shuffle             = True,
         data_name           = 'data',
         label_name          = 'softmax_label',
         aug_list            = mx.image.CreateAugmenter((3,224,224),resize=224,rand_crop=True,rand_mirror=True,mean=True,std=True))
