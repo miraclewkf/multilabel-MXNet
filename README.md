@@ -16,9 +16,9 @@ This implement doesn't need recompile MXNet and is very convenient for you to us
 |2598	|2.000000|	image7.jpg|
 
 For multilabel image classification, you should create .lst file as this(take 8 classes as example):
-| ID  | LABEL                                                                                        | IMAGE_NAME |
-|:---:|:--------------------------------------------------------------------------------------------:|:----------:|
-|5247 |	1.000000 |	0.000000 |	0.000000 |	0.000000 |	1.000000 |	0.000000 |	0.000000 |	0.000000 |	image1.jpg|
+| ID  | LABEL     | IMAGE_NAME|
+|:---:|:---------:|:---------:|
+|5247 |	1.000000  |	image1.jpg|
 
 in this implement, we only use .lst and raw image as the input instead of .rec file.
 
