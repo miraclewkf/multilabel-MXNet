@@ -1,9 +1,10 @@
 # multilabel-MXNet
-This is the implement of the multilabel image classificaton in MXNet. Multilabel means each image belong to 1 or more than 1 labels and it is different from multi task.
+#### This is the implement of the multilabel image classificaton in MXNet. Multilabel means each image belong to 1 or more than 1 labels and it is different from multi task.
 
-This implement doesn't need recompile MXNet and is very convenient for you to use. Firstly, I assume that you can use MXNet normally. Then, do as follows:
+#### This implement doesn't need recompile MXNet and is very convenient for you to use. Firstly, I assume that you can use MXNet normally. Then, do as follows:
 
- 1. If you are doing a single label image classification, your .lst file may like this(take 4 classes as example):
+## Data
+If you are doing a single label image classification, your .lst file may like this(take 4 classes as example):
 
 |ID	|label   |      image_name|
 |:------|:-------|:---------------| 
@@ -17,26 +18,30 @@ This implement doesn't need recompile MXNet and is very convenient for you to us
 
 For multilabel image classification, you should create .lst file as this(take 8 classes as example):
 
-| ID  |label     	| image_name|
+| ID  |label     | label    |label      | label     | label  	|  label    |  label    |   label	| image_name|
 |:---:|:--------:|:--------:|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|
-|5247 |	1.000000 |	1.000000|	1.000000|	0.000000|	0.000000|	0.000000|	0.000000|	0.000000| image1.jpg|
+|5247 |	1.000000 |	1.000000|	0.000000|	0.000000|	0.000000|	1.000000|	0.000000|	1.000000| image1.jpg|
+|33986|	0.000000 |	1.000000|	1.000000|	0.000000|	1.000000|	0.000000|	1.000000|	0.000000| image1.jpg|
+|1234 |	0.000000 |	1.000000|	0.000000|	1.000000|	0.000000|	0.000000|	0.000000|	0.000000| image1.jpg|
+|5262 |	1.000000 |	0.000000|	1.000000|	1.000000|	0.000000|	0.000000|	0.000000|	1.000000| image1.jpg|
+|1347 |	0.000000 |	1.000000|	1.000000|	0.000000|	1.000000|	0.000000|	0.000000|	0.000000| image1.jpg|
 
 
-in this implement, we only use .lst and raw image as the input instead of .rec file.
+In this implement, we only use .lst and raw image as the input instead of .rec file.
 
 
-
-2. run_train.sh is the train script for you to start fine-tune quickly. You should open this script and change the path of train_multilabel.py, .lst file, imagefile and model-prefix after you clone the project.
+## Train
+ run_train.sh is the train script for you to start fine-tune quickly. You should open this script and change the path of train_multilabel.py, .lst file, imagefile and model-prefix after you clone the project.
 
    Then run: 
-   sh run_train.sh
+```
+sh run_train.sh
+```
 
 ## More details
 
-1. --num-classes 8 in run_train.sh means the maximum number of label is 8 classes. For example, iamge1 has label 1,5; image2 has label 1,2,3; image3 has label 1. You can change the number for your data.
+* --num-classes 8 in run_train.sh means the maximum number of label is 8 classes. For example, iamge1 has label 1,5; image2 has label 1,2,3; image3 has label 1. You can change the number for your data.
 
-2. train_multilabel.py is 
-
-2.1. In the get_fine_tune_model function, I use net = mx.symbol.sigmoid(data=net, name='sig') and net = mx.symbol.Custom(data=net,name='softmax', op_type='CrossEntropyLoss') instead of mx.symbol.softmaxOutput to deal with multilabel problem. sigmoid layer take the output of full connection as input ahd translate it into (0,1), which means the probability. CrossEntropy layer take the probability (0,1) as input and calculate the loss.
+* In the `train_multilabel.py`, I use `net = mx.symbol.sigmoid(data=net, name='sig')` and `net = mx.symbol.Custom(data=net,name='softmax', op_type='CrossEntropyLoss')` instead of `mx.symbol.softmaxOutput` to deal with multilabel problem. sigmoid layer take the output of full connection as input ahd translate it into (0,1), which means the probability. CrossEntropy layer take the probability (0,1) as input and calculate the loss.
 
 
