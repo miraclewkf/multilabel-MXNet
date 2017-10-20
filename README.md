@@ -1,7 +1,7 @@
 # multilabel-MXNet
-#### This is the implement of the multilabel image classificaton in MXNet. Multilabel means each image belong to 1 or more than 1 labels and it is different from multi task.
+**This is the implement of the multilabel image classificaton in MXNet. Multilabel means each image belong to 1 or more than 1 labels and it is different from multi task.**
 
-#### This implement doesn't need recompile MXNet and is very convenient for you to use. Firstly, I assume that you can use MXNet normally. Then, do as follows:
+**This implement doesn't need recompile MXNet and is very convenient for you to use. Firstly, I assume that you can use MXNet normally. Then, do as follows:**
 
 ## Data
 If you are doing a single label image classification, your .lst file may like this(take 4 classes as example):
@@ -16,18 +16,10 @@ If you are doing a single label image classification, your .lst file may like th
 |22408	|3.000000|	image6.jpg|
 |2598	|2.000000|	image7.jpg|
 
-For multilabel image classification, you should create .lst file as this(take 8 classes as example):
-
-| ID  |label     | label    |label      | label     | label  	|  label    |  label    |   label	| image_name|
-|:---:|:--------:|:--------:|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|
-|5247 |	1.000000 |	1.000000|	0.000000|	0.000000|	0.000000|	1.000000|	0.000000|	1.000000| image1.jpg|
-|33986|	0.000000 |	1.000000|	1.000000|	0.000000|	1.000000|	0.000000|	1.000000|	0.000000| image1.jpg|
-|1234 |	0.000000 |	1.000000|	0.000000|	1.000000|	0.000000|	0.000000|	0.000000|	0.000000| image1.jpg|
-|5262 |	1.000000 |	0.000000|	1.000000|	1.000000|	0.000000|	0.000000|	0.000000|	1.000000| image1.jpg|
-|1347 |	0.000000 |	1.000000|	1.000000|	0.000000|	1.000000|	0.000000|	0.000000|	0.000000| image1.jpg|
+For multilabel image classification, you should create .lst file like `multilabel-MXNet/data_example/train_data.lst` (take 4 classes as example)
 
 
-In this implement, we only use .lst and raw image as the input instead of .rec file.
+**In this implement, we only use .lst and raw image as the input instead of .rec file.**
 
 
 ## Train
