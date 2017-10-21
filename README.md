@@ -32,8 +32,8 @@ sh run_train.sh
 
 ## More details
 
-* --num-classes 8 in run_train.sh means the maximum number of label is 8 classes. For example, iamge1 has label 1,5; image2 has label 1,2,3; image3 has label 1. You can change the number for your data.
+* `--num-classes` 8 in `run_train.sh` means the maximum number of label is 8 classes. For example, iamge1 has label 1,5; image2 has label 1,2,3; image3 has label 1. You can change the number for your data.
 
-* In the `train_multilabel.py`, I use `net = mx.symbol.sigmoid(data=net, name='sig')` and `net = mx.symbol.Custom(data=net,name='softmax', op_type='CrossEntropyLoss')` instead of `mx.symbol.softmaxOutput` to deal with multilabel problem. sigmoid layer take the output of full connection as input ahd translate it into (0,1), which means the probability. CrossEntropy layer take the probability (0,1) as input and calculate the loss.
+* In the `train_multilabel.py`, I use `net = mx.symbol.sigmoid(data=net, name='sig')` and `net = mx.symbol.Custom(data=net,name='softmax', op_type='CrossEntropyLoss')` instead of `mx.symbol.softmaxOutput` to deal with multilabel problem. sigmoid layer take the output of full connection as input and translate it into (0,1), which means the probability. CrossEntropy layer take the probability (0,1) as input and calculate the loss.
 
 
