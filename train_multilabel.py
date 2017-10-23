@@ -64,7 +64,7 @@ def train_model(model, gpus, epoch=0, num_epoch=20, kv='device', num_class=6):
     sym, arg_params, aux_params = mx.model.load_checkpoint(prefix, epoch)
 
     (new_sym, new_args) = get_fine_tune_model(
-        sym, arg_params, args.num_classes, 'flatten0', args.batch_size)
+        sym, arg_params, args.num_classes, 'flatten0')
 
     epoch_size = max(int(args.num_examples / args.batch_size / kv.num_workers), 1)
     lr_scheduler=multi_factor_scheduler(args.epoch, epoch_size)
