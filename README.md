@@ -1,10 +1,10 @@
 # multilabel-MXNet
-**This is the implement of the multilabel image classificaton in MXNet. Multilabel means each image belong to 1 or more than 1 labels and it is different from multi task.**
+**This is the implementation of the multilabel image classificaton in MXNet. Multilabel means each image belong to 1 or more labels and it is different from multi task.**
 
-**This implement doesn't need recompile MXNet and is very convenient for you to use. Firstly, I assume that you can use MXNet normally. Then, do as follows:**
+**This implementation doesn't need to recompile MXNet and is very convenient for you to use. Firstly, I assume that you can use MXNet normally. Then, do as follows:**
 
 ## Data
-If you are doing a single label image classification, your .lst file may like this(take 4 classes as example):
+If you are doing a single label image classification, your .lst file may like this:
 
 |ID	|label   |      image_name|
 |:------|:-------|:---------------| 
@@ -16,14 +16,14 @@ If you are doing a single label image classification, your .lst file may like th
 |22408	|3.000000|	image6.jpg|
 |2598	|2.000000|	image7.jpg|
 
-For multilabel image classification, you should create .lst file like `multilabel-MXNet/data_example/train_data.lst` (take 4 classes as example)
+For multilabel image classification, you should create `.lst` file like `multilabel-MXNet/data_example/train_data.lst` (take 4 classes as example)
 
 
-**In this implement, we only use .lst and raw image as the input instead of .rec file.**
+**In this implementation, we only use `.lst` and raw images as the input instead of `.rec` file.**
 
 
 ## Train
- run_train.sh is the train script for you to start fine-tune quickly. You should open this script and change the path of train_multilabel.py, .lst file, imagefile and model-prefix after you clone the project.
+ `run_train.sh` is the train script for you to start fine-tune quickly. You should open this script and change the path of `train_multilabel.py`, `.lst` file, imagefile and model-prefix after you clone the project.
 
    Then run: 
 ```
